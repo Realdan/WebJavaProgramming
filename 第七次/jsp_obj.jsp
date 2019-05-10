@@ -5,12 +5,16 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>JSP内置对象测试</title>
+	<title>JSP鍐呯疆瀵硅薄娴嬭瘯</title>
 </head>
 <body>
 	<%
-		String addr = request.getLocalAddr();
-		String temp[] = addr.split(":");
-		if(temp[0] == "192") out.print("访问禁止");
+		String addr = request.getRemoteAddr();
+		System.out.println(addr);
+		String IP[] = addr.split(":");
+		String head = IP[0];
 	%>
+	<jsp:forward page="showMessage.jsp">
+		<jsp:param name="head" value="<%=head %>"/>
+	</jsp:forward>
 </body>
