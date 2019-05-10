@@ -10,7 +10,6 @@
 <body>
 	<%
 		String addr = request.getRemoteAddr();
-		System.out.println(addr);
 		String IP[] = addr.split(":");
 		String head = IP[0];
 	%>
@@ -18,3 +17,4 @@
 		<jsp:param name="head" value="<%=head %>"/>
 	</jsp:forward>
 </body>
+</html>

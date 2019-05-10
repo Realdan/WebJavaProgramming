@@ -5,13 +5,15 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>访问结果</title>
+	<title>人民币价格输出</title>
 </head>
 <body>
 	<%
-		String head = request.getParameter("head");
-		if(head.equals("192")) out.print("访问禁止！<br>");
-		else out.print("访问成功！<br>");
+		String priceInDollar = request.getParameter("priceInDollar");
+		String exchangeRate = request.getParameter("exchangeRate");
+		Double priInDol = Double.valueOf(priceInDollar);
+		Double exRate = Double.valueOf(exchangeRate);
+		out.print("人民币价格为：" + priInDol * exRate + "<br>");
 	%>
 </body>
 </html>

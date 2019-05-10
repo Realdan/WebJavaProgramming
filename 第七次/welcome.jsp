@@ -5,13 +5,22 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>访问结果</title>
+	<title>欢迎</title>
 </head>
 <body>
 	<%
-		String head = request.getParameter("head");
-		if(head.equals("192")) out.print("访问禁止！<br>");
-		else out.print("访问成功！<br>");
+		String isLogin = null;
+		Cookie[] cookies = request.getCookies();
+		for(int i = 0; i < cookies.length; i++){
+			if(cookies[i].getName().equals("isLogin")){
+				isLogin = cookies[i].getValue();
+				break;
+			}
+		}
+		if(isLogin == null){
+			response.sendRedirect("login.jsp");
+		}
 	%>
+	<h1>欢迎登录！</h1>
 </body>
 </html>

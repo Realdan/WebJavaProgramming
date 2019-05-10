@@ -5,13 +5,16 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>访问结果</title>
+	<title>美元汇率输入</title>
 </head>
 <body>
 	<%
-		String head = request.getParameter("head");
-		if(head.equals("192")) out.print("访问禁止！<br>");
-		else out.print("访问成功！<br>");
+		String pri = request.getParameter("priceInDollar");
 	%>
+	<form action="page3.jsp">
+		美元兑人民币汇率：<input type="text" name="exchangeRate"><br>
+		<input type="hidden" name="priceInDollar" value="<%=pri %>">
+		<input type="submit" value="提交">
+	</form>
 </body>
 </html>

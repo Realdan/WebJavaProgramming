@@ -5,13 +5,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>访问结果</title>
+	<title>美元图书价格输入</title>
 </head>
 <body>
-	<%
-		String head = request.getParameter("head");
-		if(head.equals("192")) out.print("访问禁止！<br>");
-		else out.print("访问成功！<br>");
-	%>
+	<form action="page2.jsp">
+		美元图书价格：<input type="text" name="priceInDollar"><br>
+		<input type="submit" value="提交">
+	</form>
 </body>
 </html>
